@@ -1,14 +1,15 @@
 /**
- * Name: 
- * Last Updated On: 
+ * Name: Isayiah Lim
+ * Last Updated On: 3/3/2022
  * Mrs. Kankelborg
- * APCS Period 
+ * APCS Period 2
  * Text Battle Project Part One
  * 
  * This class represents a Player object. It must contain all of the fields and
  * methods detailed in the project spec. You may add additional fields and methods if you
  * like.
  */
-public class Player {
+public class Player 
+{
 	
 }
