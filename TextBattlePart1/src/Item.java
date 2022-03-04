@@ -11,5 +11,44 @@
  */
 public class Item 
 {
-
+	private String type;
+	
+	//default constructor
+	public Item()
+	{
+		type = "Unknown Item";
+	}
+	
+	//mutator constructor
+	public Item(String type)
+	{
+		this.type = type;
+	}
+	
+	//prints out the item
+	public String toString()
+	{
+		return type;
+	}
+	
+	//this allows an item to be used
+	public void use(Player player)
+	{
+		if (type.equals("Health Potion"))
+		{
+			int heal = (int)(Math.random()*10 + 1);
+			player.healDamage(heal);
+			System.out.println(player.getName() + " used a health potion that increased their health"
+					+ " by " + heal + ".");
+		}
+		else if (type.equals("Strength Potion"))
+		{
+			int strength = (int)(Math.random()*10 + 1);
+			player.getStronger(strength);
+			System.out.println(player.getName() + " used a strength potion their increased min and"
+					+ " max damage by " + strength + "." );
+		}
+		else
+			System.out.println(player.getName() + " used an item with an unclear result.");
+	}
 }

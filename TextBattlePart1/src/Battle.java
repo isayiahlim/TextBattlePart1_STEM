@@ -10,6 +10,7 @@
  * your startBattle method directly with my own version of the code you will write in main. 
  * 
  */
+import java.util.Scanner;
 public class Battle {
 	
 	/**
@@ -18,7 +19,17 @@ public class Battle {
 	 */
 	public static void main(String[] args) 
 	{
+		//sets the name for the player
+		Scanner input = new Scanner(System.in);
+		System.out.println("What is your name? ");
+		Player player = new Player(input.next());
 		
+		//chooses the monster from an array of monsters
+		String[] monsterList = {"Mr. Lesli", "CollegeBoard", "Tonald J. Dump", "Co-Ved Nein Tien"};
+		Monster monster = new Monster(monsterList[(int)(Math.random()*4)]);
+		
+		//starts the game
+		startBattle(player, monster, input)
 	}
 	 /**
 	  * This is the method that my test cases will call directly.
@@ -26,9 +37,61 @@ public class Battle {
 	  * @param player
 	  * @param monster
 	  */
-	public static void startBattle(Player player, Monster monster) 
+	public static void startBattle(Player player, Monster monster, Scanner input) 
 	{
+		//intro message
+		System.out.println(player.getName() + " has encounter a " + monster.getType() + "!");
+		System.out.println();
 		
+		//variables
+		int roundNum = 1;
+		
+		//runs until either the player or monster dies
+		while(player.getHealth() > 0 && monster.getHealth() > 0)
+		{
+			System.out.println("********************************** ROUND " + roundNum +
+					" **********************************");
+			System.out.println();
+			System.out.println(player.getInventory());
+			//chose between attacking and using an item
+			System.out.println("Type an inventory number or 0 to attack: ");
+			int response = input.nextInt();
+			
+			//player attack
+			if(response == 0)
+			{
+				int pDmg = player.attack(monster);
+				monster.takeDamage(pDmg);
+				System.out.println(player.getName() + " attacks the " + monster.getType() + " for " 
+						+ pDmg + " damage. \n");
+			}
+			
+			//uses an item
+			else if(response <= 5 && response > 0)
+			{
+				player.useItem(response);
+			}
+			
+			//invalid response
+			else
+				System.out.println("Invalid Selection - Missed Turn \n");
+			//monster fights back
+			if(monster.getHealth() > 0)
+			{
+				int mDmg = monster.attack(player);
+				player.takeDamage(mDmg);
+				System.out.println(monster.getType() + " attacks the " + player.getName() + " for " 
+						+ mDmg + " damage.");
+				System.out.println(player);
+				System.out.println();
+			}
+;		}
+		
+		//end message
+		if(monster.health > 0)
+			System.out.println(monster.getType() + " has defeated " + player.getName());
+		else
+			System.out.println(player.getName() + " has defeated " + monster.getType());
 	}
 
 }
