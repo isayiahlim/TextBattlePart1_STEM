@@ -43,6 +43,33 @@ public class Monster
 			this.maxDmg = 10 + this.minDmg;
 	}
 	
+	//returns the different fields
+	public String getType()
+	{
+		return type;
+	}
+	public int getHealth()
+	{
+		return health;
+	}
+	
+	//attacks the player
+	public int attack(Player player)
+	{
+		int damage = (int)(Math.random()*(maxDmg-minDmg) + minDmg);
+		player.takeDamage(damage);
+		return damage;
+	}
+	
+	//reduces health given a damage amount
+	public void takeDamage(int damage)
+	{
+		if(health - damage > 0)
+			health -= damage;
+		else
+			health = 0;
+	}
+	
 	//toString, prints out the status of the monster
 	public String toString()
 	{
