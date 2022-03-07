@@ -59,12 +59,6 @@ public class Player
 		else
 			this.maxDmg = 10 + this.minDmg;
 		
-		//sets default statistics
-		health = 100;
-		maxHealth = 100;
-		minDmg = 1;
-		maxDmg = 10;
-		
 		//declares and fills the inventory
 		inventory = new Item[5];
 		inventory[0] = new Item("Health Potion");
@@ -100,6 +94,83 @@ public class Player
 			inventory[3] = new Item("Strength Potion");
 			inventory[4] = new Item("Gamer Juice");
 		}
+	}
+	
+	//accessor methods to see all of the fields
+	public String getName()
+	{
+		return name;
+	}
+	public int getHealth()
+	{
+		return health;
+	}
+	public int getMinDamage()
+	{
+		return minDmg;
+	}
+	public int getMaxDamage()
+	{
+		return maxDmg;
+	}
+	
+	//attacks the monster
+	public int attack(Monster monster)
+	{
+		int attackDmg = (int)((Math.random()*(maxDmg-minDmg) + minDmg));
+		monster.takeDamage(attackDmg);
+		return attackDmg;
+	}
+	
+	//takes damage
+	public void takeDamage(int damage)
+	{
+		if(health - damage > 0)
+			health -= damage;
+		else
+			health = 0;
+	}
+	
+	//uses an item
+	public void useItem(int index)
+	{
+		if(index >= 0 && index < inventory.length && inventory[index] != null) 
+		{
+			inventory[index].use(this);
+		}
+		else
+			System.out.println("Invalid Selection - Missed Turn");
+	}
+	
+	//heals the player
+	public void healDamage(int hp)
+	{
+		if(health + hp <= maxHealth)	
+			health += hp;
+		else
+			health = maxHealth;
+	}
+	
+	//increases the damage the player does
+	public void getStronger(int dmg)
+	{
+		minDmg += dmg;
+		maxDmg += dmg;
+	}
+	
+	//accesses the inventory
+	public String getInventory()
+	{
+		String returnString = "Your inventory holds:";
+		for(int i = 0; i < 5; i++)
+		{
+			//makes sure that something exists at the inventory slot. If not, it prints out empty
+			if(inventory[i] != null)
+				returnString += " " + i + ": " + inventory[i];
+			else
+				returnString += " empty slot";
+		}
+		return returnString;
 	}
 	
 	//prints out the status of the player

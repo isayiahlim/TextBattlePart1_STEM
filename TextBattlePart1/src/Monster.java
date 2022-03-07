@@ -11,6 +11,39 @@
  */
 public class Monster 
 {
+	private String type;
+	private int health;
+	private int minDmg;
+	private int maxDmg;
+	
+	//sets default values + the name to the given one
+	public Monster(String type)
+	{
+		this.type = type;
+		health = 100;
+		minDmg = 1;
+		maxDmg = 10;
+	}
+	
+	//sets the values to everything given
+	public Monster(String type, int health, int minDmg, int maxDmg)
+	{
+		//makes sure the given values were high enough 
+		if(health <= 0)
+			this.health = 100;
+		else
+			this.health = health;
+		if(minDmg > 0)
+			this.minDmg = minDmg;
+		else
+			this.minDmg = 1;
+		if(maxDmg > this.minDmg)	
+			this.maxDmg = maxDmg;
+		else
+			this.maxDmg = 10 + this.minDmg;
+	}
+	
+	//toString, prints out the status of the monster
 	public String toString()
 	{
 		if(health > 0)
