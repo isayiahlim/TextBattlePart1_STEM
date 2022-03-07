@@ -40,6 +40,7 @@ public class Item
 			player.healDamage(heal);
 			System.out.println(player.getName() + " used a health potion that increased their health"
 					+ " by " + heal + ".");
+			System.out.println();
 		}
 		else if (type.equals("Strength Potion"))
 		{
@@ -47,8 +48,12 @@ public class Item
 			player.getStronger(strength);
 			System.out.println(player.getName() + " used a strength potion their increased min and"
 					+ " max damage by " + strength + "." );
+			System.out.println();
 		}
 		else
+		{
 			System.out.println(player.getName() + " used an item with an unclear result.");
+			System.out.println();
+		}
 	}
 }
