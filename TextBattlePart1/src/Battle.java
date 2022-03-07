@@ -21,8 +21,9 @@ public class Battle {
 	{
 		//sets the name for the player
 		Scanner input = new Scanner(System.in);
-		System.out.println("What is your name? ");
+		System.out.print("What is your name? ");
 		Player player = new Player(input.next());
+		System.out.println();
 		
 		//chooses the monster from an array of monsters
 		String[] monsterList = {"Mr. Lesli", "CollegeBoard", "Tonald J. Dump", "Co-Ved Nein Tien"};
@@ -54,8 +55,9 @@ public class Battle {
 			System.out.println();
 			System.out.println(player.getInventory());
 			//chose between attacking and using an item
-			System.out.println("Type an inventory number or 0 to attack: ");
+			System.out.print("Type an inventory number or 0 to attack: ");
 			int response = input.nextInt();
+			System.out.println();
 			
 			//player attack
 			if(response == 0)
@@ -63,7 +65,9 @@ public class Battle {
 				int pDmg = player.attack(monster);
 				monster.takeDamage(pDmg);
 				System.out.println(player.getName() + " attacks the " + monster.getType() + " for " 
-						+ pDmg + " damage. \n");
+						+ pDmg + " damage.");
+				System.out.println(monster);
+				System.out.println();
 			}
 			
 			//uses an item

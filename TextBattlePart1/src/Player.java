@@ -168,7 +168,7 @@ public class Player
 		{
 			//makes sure that something exists at the inventory slot. If not, it prints out empty
 			if(inventory[i] != null)
-				returnString += " " + i + ": " + inventory[i];
+				returnString += " " + (i+1) + ": " + inventory[i];
 			else
 				returnString += " empty slot";
 		}
