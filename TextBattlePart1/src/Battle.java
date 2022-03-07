@@ -29,7 +29,7 @@ public class Battle {
 		Monster monster = new Monster(monsterList[(int)(Math.random()*4)]);
 		
 		//starts the game
-		startBattle(player, monster, input)
+		startBattle(player, monster, input);
 	}
 	 /**
 	  * This is the method that my test cases will call directly.

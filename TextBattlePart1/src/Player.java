@@ -83,16 +83,18 @@ public class Player
 		
 		//declares and fills the inventory
 		this.inventory = new Item[inventory.length];
-		for(int i = 0; i < inventory.length i++)
-			if(inventory!= null)
-				this.inventory[i] = inventory[i];
-		else
+		for(int i = 0; i < inventory.length; i++)
 		{
-			inventory[0] = new Item("Health Potion");
-			inventory[1] = new Item("Health Potion");
-			inventory[2] = new Item("Strength Potion");
-			inventory[3] = new Item("Strength Potion");
-			inventory[4] = new Item("Gamer Juice");
+			if(inventory[i] != null)
+				this.inventory[i] = inventory[i];
+			else
+			{
+				inventory[0] = new Item("Health Potion");
+				inventory[1] = new Item("Health Potion");
+				inventory[2] = new Item("Strength Potion");
+				inventory[3] = new Item("Strength Potion");
+				inventory[4] = new Item("Gamer Juice");
+			}
 		}
 	}
 	
