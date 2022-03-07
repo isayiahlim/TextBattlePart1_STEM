@@ -62,10 +62,8 @@ public class Battle {
 			//player attack
 			if(response == 0)
 			{
-				int pDmg = player.attack(monster);
-				monster.takeDamage(pDmg);
 				System.out.println(player.getName() + " attacks the " + monster.getType() + " for " 
-						+ pDmg + " damage.");
+						+ player.attack(monster) + " damage.");
 				System.out.println(monster);
 				System.out.println();
 			}
@@ -82,10 +80,8 @@ public class Battle {
 			//monster fights back
 			if(monster.getHealth() > 0)
 			{
-				int mDmg = monster.attack(player);
-				player.takeDamage(mDmg);
 				System.out.println(monster.getType() + " attacks the " + player.getName() + " for " 
-						+ mDmg + " damage.");
+						+ monster.attack(player) + " damage.");
 				System.out.println(player);
 				System.out.println();
 			}
