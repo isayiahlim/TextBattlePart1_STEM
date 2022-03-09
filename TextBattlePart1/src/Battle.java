@@ -22,7 +22,7 @@ public class Battle {
 		//sets the name for the player
 		Scanner input = new Scanner(System.in);
 		System.out.print("What is your name? ");
-		Player player = new Player(input.next());
+		Player player = new Player(input.nextLine());
 		System.out.println();
 		
 		//chooses the monster from an array of monsters
