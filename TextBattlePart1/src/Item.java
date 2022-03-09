@@ -41,6 +41,7 @@ public class Item
 			System.out.println(player.getName() + " used a health potion that increased their health"
 					+ " by " + heal + ".");
 			System.out.println();
+			type = "empty slot";
 		}
 		else if (type.equals("Strength Potion"))
 		{
@@ -49,11 +50,13 @@ public class Item
 			System.out.println(player.getName() + " used a strength potion their increased min and"
 					+ " max damage by " + strength + "." );
 			System.out.println();
+			type = "empty slot";
 		}
 		else
 		{
 			System.out.println(player.getName() + " used an item with an unclear result.");
 			System.out.println();
+			type = "empty slot";
 		}
 	}
 }

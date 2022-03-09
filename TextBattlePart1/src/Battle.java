@@ -85,6 +85,7 @@ public class Battle {
 				System.out.println(player);
 				System.out.println();
 			}
+			roundNum ++;
 ;		}
 		
 		//end message
