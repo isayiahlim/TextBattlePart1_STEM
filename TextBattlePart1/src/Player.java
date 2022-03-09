@@ -83,7 +83,7 @@ public class Player
 		
 		//declares and fills the inventory
 		this.inventory = new Item[inventory.length];
-		for(int i = 0; i < inventory.length; i++)
+		for(int i = 0; i < inventory.length-1; i++)
 		{
 			if(inventory[i] != null)
 				this.inventory[i] = inventory[i];

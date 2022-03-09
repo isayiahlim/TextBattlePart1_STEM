@@ -76,7 +76,7 @@ public class Battle {
 			
 			//invalid response
 			else
-				System.out.println("Invalid Selection - Missed Turn \n");
+				System.out.println("Invalid Selection - Missed Turn\n");
 			//monster fights back
 			if(monster.getHealth() > 0)
 			{
