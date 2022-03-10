@@ -84,27 +84,16 @@ public class Player
 		
 		//declares and fills the inventory
 		this.inventory = new Item[5];
-		int remaining = 5 - inventory.length;
-		for(int i = 0; i < inventory.length; i++)
+		if(inventory == null)
 		{
-			if(inventory[i] != null)
-				this.inventory[i] = inventory[i];
-			else if(i == 0 || i == 1)
-				this.inventory[i] = new Item("Health Potion");
-			else if(i == 2 || i == 3)
-				this.inventory[i] = new Item("Strength Potion");
-			else
-				this.inventory[i] = new Item("Gamer Juice");
+			this.inventory[0] = new Item("Health Potion");
+			this.inventory[1] = new Item("Health Potion");
+			this.inventory[2] = new Item("Strength Potion");
+			this.inventory[3] = new Item("Strength Potion");
+			this.inventory[4] = new Item("Gamer Juice");
 		}
-		for(int i = remaining-1; i < 5; i++)
-		{
-			if(i == 0 || i == 1)
-				this.inventory[i] = new Item("Health Potion");
-			else if(i == 2 || i == 3)
-				this.inventory[i] = new Item("Strength Potion");
-			else
-				this.inventory[i] = new Item("Gamer Juice");
-		}
+		else 
+			this.inventory = inventory;
 	}
 	
 	//accessor methods to see all of the fields
@@ -145,7 +134,7 @@ public class Player
 	//uses an item
 	public void useItem(int index)
 	{
-		if(index > 0 && index < 6 && inventory[index-1] != null && 
+		if(index > 0 && index < inventory.length && inventory[index-1] != null && 
 				!(inventory[index-1].getType().equals("empty slot")))
 		{
 			inventory[index-1].use(this);

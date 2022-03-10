@@ -26,11 +26,11 @@ public class Battle {
 		System.out.println();
 		
 		//chooses the monster from an array of monsters
-		String[] monsterList = {"Mr. Lesli", "CollegeBoard", "Tonald J. Dump", "Bud Lite Virus"};
+		String[] monsterList = {"Mr. Lesli", "CollegeBoard", "Tonald J. Dump", "This Project"};
 		Monster monster = new Monster(monsterList[(int)(Math.random()*4)]);
 		
 		/*
-		Item[] tempInv = {new Item(), new Item()};
+		Item[] tempInv = new Item[5];
 		Player player2 = new Player("jake", tempInv);
 		System.out.println(player2.getInventory());
 		*/
