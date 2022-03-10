@@ -91,7 +91,7 @@ public class Battle {
 				System.out.println();
 			}
 			roundNum ++;
-;		}
+		}
 		
 		//end message
 		if(monster.getHealth() > 0)
