@@ -40,19 +40,18 @@ public class Item
 	//this allows an item to be used
 	public void use(Player player)
 	{
+		int amount = (int)(Math.random()*10 + 1);
 		if (type.equals("Health Potion"))
 		{
-			int heal = (int)(Math.random()*10 + 1);
-			player.healDamage(heal);
+			player.healDamage(amount);
 			System.out.println(player.getName() + " used a health potion that increased their health"
-					+ " by " + heal + ".\n");
+					+ " by " + amount + ".\n");
 		}
 		else if (type.equals("Strength Potion"))
 		{
-			int strength = (int)(Math.random()*10 + 1);
-			player.getStronger(strength);
+			player.getStronger(amount);
 			System.out.println(player.getName() + " used a strength potion their increased min and"
-					+ " max damage by " + strength + ".\n" );
+					+ " max damage by " + amount + ".\n" );
 		}
 		else
 		{
