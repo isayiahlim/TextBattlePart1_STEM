@@ -77,8 +77,8 @@ public class Player
 		this.name = name;
 		
 		//sets default statistics
-		//health = 100;
-		//maxHealth = 100;
+		health = 100;
+		maxHealth = 100;
 		minDmg = 1;
 		maxDmg = 10;
 		
@@ -134,9 +134,8 @@ public class Player
 	//uses an item
 	public void useItem(int index)
 	{
-		if(index > 0 && index < inventory.length +1 && inventory[index-1] != null && 
-				!(inventory[index-1].getType().equals("empty slot")))
-		{
+		if(index > 0 && index < inventory.length + 1 && inventory[index-1] != null && 
+				!(inventory[index-1].getType().equals("empty slot"))){
 			inventory[index-1].use(this);
 		}
 		else
