@@ -26,8 +26,14 @@ public class Battle {
 		System.out.println();
 		
 		//chooses the monster from an array of monsters
-		String[] monsterList = {"Mr. Lesli", "CollegeBoard", "Tonald J. Dump", "Co-Ved Nein Tien"};
+		String[] monsterList = {"Mr. Lesli", "CollegeBoard", "Tonald J. Dump", "Bud Lite Virus"};
 		Monster monster = new Monster(monsterList[(int)(Math.random()*4)]);
+		
+		/*
+		Item[] tempInv = {new Item(), new Item()};
+		Player player2 = new Player("jake", tempInv);
+		System.out.println(player2.getInventory());
+		*/
 		
 		//starts the game
 		startBattle(player, monster, input);

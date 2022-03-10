@@ -31,6 +31,12 @@ public class Item
 		return type;
 	}
 	
+	//returns item
+	public String getType()
+	{
+		return type;
+	}
+	
 	//this allows an item to be used
 	public void use(Player player)
 	{

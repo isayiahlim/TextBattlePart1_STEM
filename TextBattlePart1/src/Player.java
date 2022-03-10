@@ -135,12 +135,13 @@ public class Player
 	//uses an item
 	public void useItem(int index)
 	{
-		if(index > 0 && index < 6 && inventory[index-1] != null) 
+		if(index > 0 && index < 6 && inventory[index-1] != null && 
+				!(inventory[index-1].getType().equals("empty slot")))
 		{
 			inventory[index-1].use(this);
 		}
 		else
-			System.out.println("Invalid Selection - Missed Turn");
+			System.out.println("Invalid Selection - Missed Turn\n");
 	}
 	
 	//heals the player
@@ -163,13 +164,13 @@ public class Player
 	public String getInventory()
 	{
 		String returnString = "Your inventory holds:";
-		for(int i = 0; i < 5; i++)
+		for(int i = 0; i < inventory.length; i++)
 		{
 			//makes sure that something exists at the inventory slot. If not, it prints out empty
 			if(inventory[i] != null)
 				returnString += " " + (i+1) + ": " + inventory[i];
 			else
-				returnString += " empty slot";
+				returnString += " " + (i+1) + ": empty slot";
 		}
 		return returnString;
 	}
