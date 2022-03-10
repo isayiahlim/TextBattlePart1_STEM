@@ -78,7 +78,7 @@ public class Player
 		
 		//sets default statistics
 		//health = 100;
-		maxHealth = 100;
+		//maxHealth = 100;
 		minDmg = 1;
 		maxDmg = 10;
 		
