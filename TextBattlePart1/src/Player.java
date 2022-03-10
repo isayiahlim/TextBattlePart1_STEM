@@ -77,7 +77,7 @@ public class Player
 		this.name = name;
 		
 		//sets default statistics
-		health = 100;
+		//health = 100;
 		maxHealth = 100;
 		minDmg = 1;
 		maxDmg = 10;
