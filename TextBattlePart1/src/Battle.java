@@ -23,18 +23,11 @@ public class Battle {
 		Scanner input = new Scanner(System.in);
 		System.out.print("What is your name? ");
 		Player player = new Player(input.nextLine());
-		System.out.println();
-		
+
 		//chooses the monster from an array of monsters
 		String[] monsterList = {"Mr. Lesli", "CollegeBoard", "Tonald J. Dump", "This Project"};
 		Monster monster = new Monster(monsterList[(int)(Math.random()*4)]);
-		
-		/*
-		Item[] tempInv = new Item[5];
-		Player player2 = new Player("jake", tempInv);
-		System.out.println(player2.getInventory());
-		*/
-		
+
 		//starts the game
 		startBattle(player, monster, input);
 	}
