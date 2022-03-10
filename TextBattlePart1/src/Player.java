@@ -137,6 +137,7 @@ public class Player
 		if(index > 0 && index < inventory.length + 1 && inventory[index-1] != null && 
 				!(inventory[index-1].getType().equals("empty slot"))){
 			inventory[index-1].use(this);
+			inventory[index-1] = null;
 		}
 		else
 			System.out.println("Invalid Selection - Missed Turn\n");

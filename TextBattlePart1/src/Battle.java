@@ -47,7 +47,7 @@ public class Battle {
 	public static void startBattle(Player player, Monster monster, Scanner input) 
 	{
 		//intro message
-		System.out.println(player.getName() + " has encounter a " + monster.getType() + "!\n");
+		System.out.println(player.getName() + " has encountered a " + monster.getType() + "!\n");
 		
 		//variables
 		int roundNum = 1;

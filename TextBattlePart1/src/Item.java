@@ -46,7 +46,6 @@ public class Item
 			player.healDamage(heal);
 			System.out.println(player.getName() + " used a health potion that increased their health"
 					+ " by " + heal + ".\n");
-			type = "empty slot";
 		}
 		else if (type.equals("Strength Potion"))
 		{
@@ -54,16 +53,14 @@ public class Item
 			player.getStronger(strength);
 			System.out.println(player.getName() + " used a strength potion their increased min and"
 					+ " max damage by " + strength + ".\n" );
-			type = "empty slot";
 		}
-		else if (type.equals("empty slot"))
+		else if (type.equals("empty slot") || type == null)
 		{
 			System.out.println("Invalid Selection - Missed Turn");
 		}
 		else
 		{
 			System.out.println(player.getName() + " used an item with an unclear result.\n");
-			type = "empty slot";
 		}
 	}
 }
