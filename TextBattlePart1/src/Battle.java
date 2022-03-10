@@ -71,16 +71,8 @@ public class Battle {
 				System.out.println(monster);
 				System.out.println();
 			}
-			
-			//uses an item
-			else if(response > 0 && response <= 5)
-			{
-				player.useItem(response);
-			}
-			
-			//invalid response
 			else
-				System.out.println("Invalid Selection - Missed Turn\n");
+				player.useItem(response);
 			
 			//monster fights back
 			if(monster.getHealth() > 0)

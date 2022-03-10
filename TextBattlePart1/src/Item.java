@@ -56,6 +56,10 @@ public class Item
 					+ " max damage by " + strength + ".\n" );
 			type = "empty slot";
 		}
+		else if (type.equals("empty slot"))
+		{
+			System.out.println("Invalid Selection - Missed Turn");
+		}
 		else
 		{
 			System.out.println(player.getName() + " used an item with an unclear result.\n");
