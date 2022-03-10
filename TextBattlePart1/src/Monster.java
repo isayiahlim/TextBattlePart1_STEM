@@ -28,6 +28,7 @@ public class Monster
 	//sets the values to everything given
 	public Monster(String type, int health, int minDmg, int maxDmg)
 	{
+		this.type = type;
 		//makes sure the given values were high enough 
 		if(health <= 0)
 			this.health = 100;
