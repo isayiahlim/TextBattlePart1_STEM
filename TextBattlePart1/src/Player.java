@@ -117,7 +117,7 @@ public class Player
 	//attacks the monster
 	public int attack(Monster monster)
 	{
-		int attackDmg = (int)((Math.random()*(maxDmg-minDmg) + minDmg));
+		int attackDmg = (int)((Math.random()*(maxDmg-minDmg+1) + minDmg));
 		monster.takeDamage(attackDmg);
 		return attackDmg;
 	}
@@ -134,8 +134,7 @@ public class Player
 	//uses an item
 	public void useItem(int index)
 	{
-		if(index > 0 && index < inventory.length + 1 && inventory[index-1] != null && 
-				!(inventory[index-1].getType().equals("empty slot"))){
+		if(index > 0 && index < inventory.length + 1 && inventory[index-1] != null){
 			inventory[index-1].use(this);
 			inventory[index-1] = null;
 		}
