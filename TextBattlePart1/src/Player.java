@@ -83,12 +83,22 @@ public class Player
 		maxDmg = 10;
 		
 		//declares and fills the inventory
-		this.inventory = new Item[inventory.length];
-		for(int i = 0; i < inventory.length-1; i++)
+		this.inventory = new Item[5];
+		int remaining = 5 - inventory.length;
+		for(int i = 0; i < inventory.length; i++)
 		{
 			if(inventory[i] != null)
 				this.inventory[i] = inventory[i];
 			else if(i == 0 || i == 1)
+				this.inventory[i] = new Item("Health Potion");
+			else if(i == 2 || i == 3)
+				this.inventory[i] = new Item("Strength Potion");
+			else
+				this.inventory[i] = new Item("Gamer Juice");
+		}
+		for(int i = remaining-1; i < 5; i++)
+		{
+			if(i == 0 || i == 1)
 				this.inventory[i] = new Item("Health Potion");
 			else if(i == 2 || i == 3)
 				this.inventory[i] = new Item("Strength Potion");
