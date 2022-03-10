@@ -39,8 +39,7 @@ public class Item
 			int heal = (int)(Math.random()*10 + 1);
 			player.healDamage(heal);
 			System.out.println(player.getName() + " used a health potion that increased their health"
-					+ " by " + heal + ".");
-			System.out.println();
+					+ " by " + heal + ".\n");
 			type = "empty slot";
 		}
 		else if (type.equals("Strength Potion"))
@@ -48,14 +47,12 @@ public class Item
 			int strength = (int)(Math.random()*10 + 1);
 			player.getStronger(strength);
 			System.out.println(player.getName() + " used a strength potion their increased min and"
-					+ " max damage by " + strength + "." );
-			System.out.println();
+					+ " max damage by " + strength + ".\n" );
 			type = "empty slot";
 		}
 		else
 		{
-			System.out.println(player.getName() + " used an item with an unclear result.");
-			System.out.println();
+			System.out.println(player.getName() + " used an item with an unclear result.\n");
 			type = "empty slot";
 		}
 	}

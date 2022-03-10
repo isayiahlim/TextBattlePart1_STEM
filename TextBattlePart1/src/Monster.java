@@ -33,10 +33,12 @@ public class Monster
 			this.health = 100;
 		else
 			this.health = health;
+		
 		if(minDmg > 0)
 			this.minDmg = minDmg;
 		else
 			this.minDmg = 1;
+		
 		if(maxDmg > this.minDmg)	
 			this.maxDmg = maxDmg;
 		else

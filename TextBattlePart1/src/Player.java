@@ -50,10 +50,12 @@ public class Player
 		else 
 			this.health = 100;
 		maxHealth = this.health;
+		
 		if(minDmg > 0)
 			this.minDmg = minDmg;
 		else
 			this.minDmg = 1;
+		
 		if(maxDmg > this.minDmg)	
 			this.maxDmg = maxDmg;
 		else
@@ -68,7 +70,6 @@ public class Player
 		inventory[4] = new Item("Gamer Juice");
 	}
 	
-	//constructor that sets inventory
 	//constructor that initializes the player's fields to a default
 	public Player(String name, Item[] inventory)
 	{
@@ -87,14 +88,12 @@ public class Player
 		{
 			if(inventory[i] != null)
 				this.inventory[i] = inventory[i];
+			else if(i == 0 || i == 1)
+				this.inventory[i] = new Item("Health Potion");
+			else if(i == 2 || i == 3)
+				this.inventory[i] = new Item("Strength Potion");
 			else
-			{
-				this.inventory[0] = new Item("Health Potion");
-				this.inventory[1] = new Item("Health Potion");
-				this.inventory[2] = new Item("Strength Potion");
-				this.inventory[3] = new Item("Strength Potion");
-				this.inventory[4] = new Item("Gamer Juice");
-			}
+				this.inventory[i] = new Item("Gamer Juice");
 		}
 	}
 	
@@ -147,7 +146,7 @@ public class Player
 	//heals the player
 	public void healDamage(int hp)
 	{
-		if(health + hp <= maxHealth)	
+		if(health + hp < maxHealth)	
 			health += hp;
 		else
 			health = maxHealth;

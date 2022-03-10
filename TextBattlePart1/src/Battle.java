@@ -41,8 +41,7 @@ public class Battle {
 	public static void startBattle(Player player, Monster monster, Scanner input) 
 	{
 		//intro message
-		System.out.println(player.getName() + " has encounter a " + monster.getType() + "!");
-		System.out.println();
+		System.out.println(player.getName() + " has encounter a " + monster.getType() + "!\n");
 		
 		//variables
 		int roundNum = 1;
@@ -51,15 +50,14 @@ public class Battle {
 		while(player.getHealth() > 0 && monster.getHealth() > 0)
 		{
 			System.out.println("********************************** ROUND " + roundNum +
-					" **********************************");
-			System.out.println();
+					" **********************************\n");
 			System.out.println(player.getInventory());
 			//chose between attacking and using an item
 			System.out.print("Type an inventory number or 0 to attack: ");
 			int response = input.nextInt();
 			System.out.println();
 			
-			//player attack
+			//player's move
 			if(response == 0)
 			{
 				System.out.println(player.getName() + " attacks the " + monster.getType() + " for " 
@@ -69,7 +67,7 @@ public class Battle {
 			}
 			
 			//uses an item
-			else if(response <= 5 && response > 0)
+			else if(response > 0 && response <= 5)
 			{
 				player.useItem(response);
 			}
@@ -77,6 +75,7 @@ public class Battle {
 			//invalid response
 			else
 				System.out.println("Invalid Selection - Missed Turn\n");
+			
 			//monster fights back
 			if(monster.getHealth() > 0)
 			{
