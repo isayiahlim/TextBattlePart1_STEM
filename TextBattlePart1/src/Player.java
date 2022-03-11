@@ -136,14 +136,15 @@ public class Player
 	//uses an item
 	public void useItem(int index)
 	{
-		if(inventory[index-1] == null || index < 0 || index > inventory.length + 1)
+		index--;
+		if(inventory[index] == null || index < 0 || index > inventory.length)
 		{
 			System.out.println("Invalid Selection - Missed Turn\n");
 		}
 		else
 		{
-			inventory[index-1].use(this);
-			inventory[index-1] = null;
+			inventory[index].use(this);
+			inventory[index] = null;
 		}
 	}
 	
