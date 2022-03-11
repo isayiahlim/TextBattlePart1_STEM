@@ -53,18 +53,18 @@ public class Battle {
 			System.out.println("Your inventory holds: " + player.getInventory());
 			//chose between attacking and using an item
 			System.out.print("Type an inventory slot number or 0 to attack: ");
-			int response = input.nextInt();
+			int response = input.nextInt() - 1;
 			System.out.println();
 			
 			//player's move
-			if(response == 0)
+			if(response == -1)
 			{
 				System.out.println(player.getName() + " attacks the " + monster.getType() + " for " 
 						+ player.attack(monster) + " damage.");
 				System.out.println(monster);
 				System.out.println();
 			}
-			else if(response != 0)
+			else
 				player.useItem(response);
 			
 			//monster fights back
