@@ -136,7 +136,8 @@ public class Player
 	//uses an item
 	public void useItem(int index)
 	{
-		if(index < 0 || index > inventory.length - 1)
+		index --;
+		if(index < -1 || index >= inventory.length)
 			System.out.println("Invalid Selection - Missed Turn\n");
 		else if(inventory[index] == null)
 			System.out.println("Invalid Selection - Missed Turn\n");
