@@ -143,8 +143,8 @@ public class Player
 			System.out.println("Invalid Selection - Missed Turn\n");
 		else
 		{
-			inventory[index-1].use(this);
-			inventory[index-1] = null;
+			inventory[index].use(this);
+			inventory[index] = null;
 		}
 	}
 	
