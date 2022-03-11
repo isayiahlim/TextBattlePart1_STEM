@@ -137,10 +137,10 @@ public class Player
 		index -= 1;
 		if(index >= 0 && index < inventory.length && inventory[index] != null){
 			inventory[index].use(this);
-			inventory[index] = null;
 		}
-		else if(index < 0 || index >= inventory.length)
+		else
 			System.out.println("Invalid Selection - Missed Turn\n");
+		inventory[index] = null;
 	}
 	
 	//heals the player
