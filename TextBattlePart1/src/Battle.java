@@ -23,7 +23,8 @@ public class Battle {
 		Scanner input = new Scanner(System.in);
 		System.out.print("What is your name? ");
 		Player player = new Player(input.nextLine());
-
+		System.out.println();
+		
 		//chooses the monster from an array of monsters
 		String[] monsterList = {"Mr. Lesli", "CollegeBoard", "Tonald J. Dump", "This Project"};
 		Monster monster = new Monster(monsterList[(int)(Math.random()*4)]);
@@ -53,11 +54,11 @@ public class Battle {
 			System.out.println("Your inventory holds: " + player.getInventory());
 			//chose between attacking and using an item
 			System.out.print("Type an inventory slot number or 0 to attack: ");
-			int response = input.nextInt() - 1;
+			int response = input.nextInt();
 			System.out.println();
 			
 			//player's move
-			if(response == -1)
+			if(response == 0)
 			{
 				System.out.println(player.getName() + " attacks the " + monster.getType() + " for " 
 						+ player.attack(monster) + " damage.");
@@ -65,7 +66,7 @@ public class Battle {
 				System.out.println();
 			}
 			else
-				player.useItem(response);
+				player.useItem(response-1);
 			
 			//monster fights back
 			if(monster.getHealth() > 0)
