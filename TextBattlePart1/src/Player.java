@@ -83,9 +83,9 @@ public class Player
 		maxDmg = 10;
 		
 		//declares and fills the inventory
-		this.inventory = new Item[5];
 		if(inventory == null)
 		{
+			this.inventory = new Item[5];
 			this.inventory[0] = new Item("Health Potion");
 			this.inventory[1] = new Item("Health Potion");
 			this.inventory[2] = new Item("Strength Potion");
@@ -93,7 +93,9 @@ public class Player
 			this.inventory[4] = new Item("Gamer Juice");
 		}
 		else 
+		{
 			this.inventory = inventory;
+		}
 	}
 	
 	//accessor methods to see all of the fields
@@ -134,13 +136,12 @@ public class Player
 	//uses an item
 	public void useItem(int index)
 	{
-		index -= 1;
-		if(index >= 0 && index < inventory.length && inventory[index] != null){
-			inventory[index].use(this);
+		if(index > 0 && index < inventory.length+1 && inventory[index-1] != null){
+			inventory[index-1].use(this);
 		}
 		else
 			System.out.println("Invalid Selection - Missed Turn\n");
-		inventory[index] = null;
+		inventory[index-1] = null;
 	}
 	
 	//heals the player
