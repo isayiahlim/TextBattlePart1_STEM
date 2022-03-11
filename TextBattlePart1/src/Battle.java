@@ -64,7 +64,7 @@ public class Battle {
 				System.out.println(monster);
 				System.out.println();
 			}
-			else
+			else if(response != 0)
 				player.useItem(response);
 			
 			//monster fights back
