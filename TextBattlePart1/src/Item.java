@@ -44,14 +44,18 @@ public class Item
 		if (type.equals("Health Potion"))
 		{
 			player.healDamage(amount);
-			System.out.println(player.getName() + " used a health potion that increased their health"
-					+ " by " + amount + ".\n");
+			System.out.println(player.getName() + " used a health potion that increased their "
+					+ "health by " + amount + ".\n");
 		}
 		else if (type.equals("Strength Potion"))
 		{
 			player.getStronger(amount);
-			System.out.println(player.getName() + " used a strength potion their increased min and"
-					+ " max damage by " + amount + ".\n" );
+			System.out.println(player.getName() + " used a strength potion that increased their "
+					+ "min and max damage by " + amount + ".\n" );
+		}
+		else if (type == null)
+		{
+			System.out.println("Invalid Selection - Missed Turn");
 		}
 		else
 		{

@@ -50,9 +50,9 @@ public class Battle {
 		{
 			System.out.println("********************************** ROUND " + roundNum +
 					" **********************************\n");
-			System.out.println(player.getInventory());
+			System.out.println("Your inventory holds: " +player.getInventory());
 			//chose between attacking and using an item
-			System.out.print("Type an inventory number or 0 to attack: ");
+			System.out.print("Type an inventory slot number or 0 to attack: ");
 			int response = input.nextInt();
 			System.out.println();
 			

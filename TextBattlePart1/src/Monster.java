@@ -77,7 +77,7 @@ public class Monster
 	public String toString()
 	{
 		if(health > 0)
-			return type + " has " + health + " health left.";
+			return "The " + type + " has " + health + " health left.";
 		return type + " is dead.";
 	}
 }

@@ -161,7 +161,7 @@ public class Player
 	//accesses the inventory
 	public String getInventory()
 	{
-		String returnString = "Your inventory holds:";
+		String returnString = "";
 		for(int i = 0; i < inventory.length; i++)
 		{
 			//makes sure that something exists at the inventory slot. If not, it prints out empty
