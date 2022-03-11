@@ -53,13 +53,11 @@ public class Item
 			System.out.println(player.getName() + " used a strength potion that increased their "
 					+ "min and max damage by " + amount + ".\n" );
 		}
-		else if (type == null)
-		{
-			System.out.println("Invalid Selection - Missed Turn");
-		}
-		else
+		else if (type.equals("empty slot"))
 		{
 			System.out.println(player.getName() + " used an item with an unclear result.\n");
 		}
+		else
+			System.out.println("Invalid Selection - Missed Turn\n");
 	}
 }

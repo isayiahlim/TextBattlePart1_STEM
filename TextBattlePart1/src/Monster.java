@@ -78,6 +78,6 @@ public class Monster
 	{
 		if(health > 0)
 			return "The " + type + " has " + health + " health left.";
-		return type + " is dead.";
+		return "The " + type + " is dead.";
 	}
 }
