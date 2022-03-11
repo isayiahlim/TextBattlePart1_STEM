@@ -67,7 +67,7 @@ public class Player
 		inventory[1] = new Item("Health Potion");
 		inventory[2] = new Item("Strength Potion");
 		inventory[3] = new Item("Strength Potion");
-		inventory[4] = new Item("Gamer Juice");
+		inventory[4] = new Item();
 	}
 	
 	//constructor that initializes the player's fields to a default
@@ -90,7 +90,7 @@ public class Player
 			this.inventory[1] = new Item("Health Potion");
 			this.inventory[2] = new Item("Strength Potion");
 			this.inventory[3] = new Item("Strength Potion");
-			this.inventory[4] = new Item("Gamer Juice");
+			this.inventory[4] = new Item();
 		}
 		else 
 		{
