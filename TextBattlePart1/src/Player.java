@@ -138,13 +138,12 @@ public class Player
 	{
 		if(index < 0 || index >= inventory.length)
 			System.out.println("Invalid Selection - Missed Turn\n");
-		index --;
-		if(inventory[index] == null)
+		else if(inventory[index-1] == null)
 			System.out.println("Invalid Selection - Missed Turn\n");
 		else
 		{
-			inventory[index].use(this);
-			inventory[index] = null;
+			inventory[index-1].use(this);
+			inventory[index-1] = null;
 		}
 	}
 	
