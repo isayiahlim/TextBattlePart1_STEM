@@ -117,7 +117,7 @@ public class Player
 	//attacks the monster
 	public int attack(Monster monster)
 	{
-		int attackDmg = (int)((Math.random()*(maxDmg-minDmg) + minDmg));
+		int attackDmg = (int)((Math.random()*(maxDmg-minDmg+1) + minDmg));
 		monster.takeDamage(attackDmg);
 		return attackDmg;
 	}
@@ -134,11 +134,12 @@ public class Player
 	//uses an item
 	public void useItem(int index)
 	{
-		if(index > 0 && index < inventory.length + 1 && inventory[index-1] != null){
-			inventory[index-1].use(this);
-			inventory[index-1] = null;
+		index -= 1;
+		if(index >= 0 && index < inventory.length && inventory[index] != null){
+			inventory[index].use(this);
+			inventory[index] = null;
 		}
-		else
+		else if(index < 0 || index >= inventory.length)
 			System.out.println("Invalid Selection - Missed Turn\n");
 	}
 	
