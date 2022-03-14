@@ -63,11 +63,10 @@ public class Battle {
 				System.out.println(player.getName() + " attacks the " + monster.getType() + " for " 
 						+ player.attack(monster) + " damage.");
 				System.out.println(monster);
-				System.out.println();
 			}
 			else
 				player.useItem(response-1);
-			
+			System.out.println();
 			//monster fights back
 			if(monster.getHealth() > 0)
 			{
