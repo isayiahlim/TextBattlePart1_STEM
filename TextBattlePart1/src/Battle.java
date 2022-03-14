@@ -82,7 +82,7 @@ public class Battle {
 		
 		//end message
 		if(monster.getHealth() > 0)
-			System.out.println("The" + monster.getType() + " has defeated " + player.getName());
+			System.out.println("The " + monster.getType() + " has defeated " + player.getName());
 		else
 			System.out.println(player.getName() + " has defeated the " + monster.getType());
 	}
