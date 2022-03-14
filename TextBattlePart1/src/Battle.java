@@ -50,7 +50,8 @@ public class Battle {
 		while(player.getHealth() > 0 && monster.getHealth() > 0)
 		{
 			System.out.println("********************************** ROUND " + roundNum +
-					" **********************************\n");
+					" **********************************");
+			System.out.println();
 			System.out.println("Your inventory holds: " + player.getInventory());
 			//chose between attacking and using an item
 			System.out.print("Type an inventory slot number or 0 to attack: ");
@@ -70,7 +71,7 @@ public class Battle {
 			//monster fights back
 			if(monster.getHealth() > 0)
 			{
-				System.out.println(monster.getType() + " attacks the " + player.getName() + " for " 
+				System.out.println("The " + monster.getType() + " attacks " + player.getName() + " for " 
 						+ monster.attack(player) + " damage.");
 				System.out.println(player);
 				System.out.println();
