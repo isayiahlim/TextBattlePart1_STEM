@@ -49,7 +49,6 @@ public class Battle {
 		//runs until either the player or monster dies
 		while(player.getHealth() > 0 && monster.getHealth() > 0)
 		{
-			System.out.println();
 			System.out.println("********************************** ROUND " + roundNum +
 					" **********************************");
 			System.out.println();
@@ -78,6 +77,7 @@ public class Battle {
 				System.out.println();
 			}
 			roundNum ++;
+			System.out.println();
 		}
 		
 		//end message
